@@ -19,3 +19,25 @@ api_key_nz = "NZ_API_KEY"
 api_key_iz = "IZ_API_KEY"
 
 This script assumes that field 856 contains the old links to the Sosa graphics (edoc.zhbluzern.ch) and can be overwritten (which is true for these ca. 2300 titles, but may have to be checked for another purpose).
+
+## Remove a certain field
+
+```python
+    # Remove all 024 matching Subfield a with the given ARK
+    
+    '''
+    marc_024 = marcxml.findall(".//datafield[@tag='506']")
+    print(bib['ARK'])
+    for field in marc_024:
+        subfield_a = field.find(".//subfield[@code='a']")
+        subfield_u = field.find(".//subfield[@code='u']")
+        subfield_2 = field.find(".//subfield[@code='2']")
+        print(subfield_a.text)
+        print(subfield_2.text)
+        #if subfield_a.text == bib["ARK"] and subfield_2.text == "ark":
+        #    print("match ARK")
+        field.remove(subfield_a)
+        field.remove(subfield_u)
+        field.remove(subfield_2)
+    '''
+```
