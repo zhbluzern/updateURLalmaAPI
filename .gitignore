@@ -1,2 +1,5 @@
 __pycache__/
 config.py
+*.xml
+*.xml
+backup-xml/991062340789705501.xml
