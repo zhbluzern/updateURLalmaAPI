@@ -33,6 +33,10 @@ api_key_nz = "NZ_API_KEY"
 ```
 This script assumes that field 856 contains the old links to the Sosa graphics (edoc.zhbluzern.ch) and can be overwritten (which is true for these ca. 2300 titles, but may have to be checked for another purpose).
 
+## backup the xml files before updating them
+
+Line 31ff. contains some backup export. To run the script, create a directory named backup-xml before you run it. If you don't need backup, you can uncomment lines 31ff. 
+
 ## Remove a certain field
 
 ```python
