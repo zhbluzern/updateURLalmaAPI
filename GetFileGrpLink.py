@@ -32,7 +32,7 @@ for id in id_url_list:
        print(f"error on: {id['mmsID']}")
 
     #ResultDict schreiben
-    resultDet["mmsId"] = id['mmsID']
+    resultDet["mmsId"] = str(id['mmsID']) #stringify mmsId da als integer im Json vorliegt.
     resultDet["001"] = id['networkID']
     resultDet["thumbnailUrl"] = fileUrl
     resultSet.append(resultDet)
