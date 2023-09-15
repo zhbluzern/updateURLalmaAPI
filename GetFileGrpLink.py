@@ -2,6 +2,7 @@ import json
 import urllib.request
 from lxml import etree
 import re
+import pandas as pd
 
 #Namespaces
 ns = {'xmlns' : 'http://www.loc.gov/zing/srw/', 
@@ -32,11 +33,11 @@ for id in id_url_list:
 
     #ResultDict schreiben
     resultDet["mmsId"] = id['mmsID']
+    resultDet["001"] = id['networkID']
     resultDet["thumbnailUrl"] = fileUrl
     resultSet.append(resultDet)
     #break
 
-result = json.dumps(resultSet)
-# Writing to json-File
-with open("mmsId_ThumnailUrl.json", "w") as outfile:
-    outfile.write(result)
+#Export ResultSet to XLS
+df = pd.DataFrame(resultSet)
+df.to_excel('SoSaGraphiken_NZID_ThumbnailURL.xlsx')
